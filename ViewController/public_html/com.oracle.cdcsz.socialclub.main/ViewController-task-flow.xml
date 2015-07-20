@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="GBK" ?>
+<adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
+  <task-flow-definition id="ViewController-task-flow">
+    <default-activity>isRegistered</default-activity>
+    <view id="isRegistered">
+      <page>/com.oracle.cdcsz.socialclub.entry/isRegistered.amx</page>
+    </view>
+    <view id="scanToRegist">
+      <page>/com.oracle.cdcsz.socialclub.entry/scanToRegist.amx</page>
+    </view>
+    <task-flow-call id="leaderTaskFlow">
+      <task-flow-reference>
+        <document>/com.oracle.cdcsz.socialclub.leader/leaderTaskFlow.xml</document>
+        <id>leaderTaskFlow</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <task-flow-call id="stuffTaskFlow">
+      <task-flow-reference>
+        <document>/com.oracle.cdcsz.socialclub.stuff/stuffTaskFlow.xml</document>
+        <id>stuffTaskFlow</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <control-flow-rule id="__1">
+      <from-activity-id>isRegistered</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>gotoScanToRegist</from-outcome>
+        <to-activity-id>scanToRegist</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__3">
+        <from-outcome>gotoLeaderTaskFlow</from-outcome>
+        <to-activity-id>leaderTaskFlow</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__4">
+        <from-outcome>gotoStuffTaskFlow</from-outcome>
+        <to-activity-id>stuffTaskFlow</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__5">
+      <from-activity-id>scanToRegist</from-activity-id>
+      <control-flow-case id="__6">
+        <from-outcome>gotoLeaderTaskFlow</from-outcome>
+        <to-activity-id>leaderTaskFlow</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__7">
+        <from-outcome>gotoTaskTaskFlow</from-outcome>
+        <to-activity-id>stuffTaskFlow</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <page-flow-scope-behavior>
+      <push-new/>
+    </page-flow-scope-behavior>
+  </task-flow-definition>
+</adfc-mobile-config>

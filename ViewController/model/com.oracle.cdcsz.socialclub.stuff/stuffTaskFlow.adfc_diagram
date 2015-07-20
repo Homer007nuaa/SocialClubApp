@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">stuffMain</property>
+      <property
+         name="page">/com.oracle.cdcsz.socialclub.stuff/stuffMain.amx</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>stuffMain&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">175.94824</property>
+      <property
+         name="x">221.0</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">activityDetials</property>
+      <property
+         name="page">/com.oracle.cdcsz.socialclub.stuff/activityDetials.amx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>activityDetials&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">174.89648</property>
+      <property
+         name="x">481.0</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="View3">
+      <property
+         name="fromOutcome">gotoActivityDetials</property>
+      <property
+         name="sdm:polyPoints">R50,262.0,175.59766,440.0,174.5459,L50</property>
+   </ControlFlowCase>
+</SDM>
